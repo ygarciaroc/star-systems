@@ -1,58 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inicializar el fondo espacial de Star Systems
-    createSpaceBackground();
+const canvas = document.getElementById('starCanvas');
+const ctx = canvas.getContext('2d');
 
-    // 2. Efecto de entrada suave (Fade-in)
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 1.5s ease-in-out';
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    // 3. Log de consola profesional
-    console.log("%c STAR SYSTEMS | System Online ", 
-                "color: #E5E4E2; background: #050A14; font-weight: bold; border: 1px solid #89CFF0; padding: 5px;");
-});
+const stars = Array.from({ length: 150 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 1.5,
+    speed: Math.random() * 0.5
+}));
 
-/**
- * Genera el campo de estrellas dinámico
- */
-function createSpaceBackground() {
-    const container = document.querySelector('.stars-container');
-    if (!container) return;
-
-    const starCount = 120; // Un balance elegante
-
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star-particle';
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#E5E4E2";
+    
+    stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
         
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const size = Math.random() * 2 + 'px';
-        
-        star.style.left = `${x}%`;
-        star.style.top = `${y}%`;
-        star.style.width = size;
-        star.style.height = size;
-        
-        const duration = Math.random() * 3 + 2;
-        const delay = Math.random() * 5;
-        star.style.animation = `twinkle ${duration}s infinite ${delay}s`;
-
-        container.appendChild(star);
-    }
+        star.y += star.speed;
+        if (star.y > canvas.height) star.y = 0;
+    });
+    
+    requestAnimationFrame(draw);
 }
 
-/**
- * Interactividad para la estrella de Star Systems
- */
-const starIcon = document.querySelector('.modern-star');
-if (starIcon) {
-    starIcon.addEventListener('mouseover', () => {
-        starIcon.style.filter = 'drop-shadow(0 0 25px rgba(255, 255, 255, 0.8))';
-        starIcon.style.transform = 'scale(1.08) rotate(3deg)';
-        starIcon.style.transition = '0.5s ease';
-    });
+draw();
 
-    starIcon.addEventListener('mouseout', () => {
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
