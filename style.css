@@ -1,94 +1,67 @@
 :root {
     --baby-blue: #89CFF0;
     --platinum: #E5E4E2;
-    --deep-space: #050A14;
-    --pure-white: #FFFFFF;
+    --space-black: #05070A;
+    --industrial-gray: #1A1D23;
 }
 
 body {
     margin: 0;
-    background-color: var(--deep-space);
-    color: var(--pure-white);
-    font-family: 'Outfit', sans-serif;
+    background-color: var(--space-black);
+    color: white;
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
 
-/* Fondo de Estrellas */
-.stars-container {
+#starCanvas {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    top: 0;
+    left: 0;
     z-index: -1;
 }
 
-/* Logo Animado con Glisten */
-.modern-star {
-    width: 150px;
-    filter: drop-shadow(0 0 15px var(--baby-blue));
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-.star-shape {
-    fill: url(#platinum-grad);
-    stroke: var(--baby-blue);
-    stroke-width: 0.5;
-}
-
-@keyframes glisten {
-    0% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); filter: brightness(1.2) drop-shadow(0 0 20px white); }
-    100% { opacity: 0.3; transform: scale(1); }
-}
-
-.star-logo-container {
+.main-star {
+    width: 120px;
+    filter: drop-shadow(0 0 10px var(--baby-blue));
     animation: glisten 4s infinite ease-in-out;
 }
 
-/* Navegación */
-nav {
+@keyframes glisten {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     padding: 2rem;
-    border-bottom: 1px solid rgba(137, 207, 240, 0.2);
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.project-card {
+    background: var(--industrial-gray);
+    border-left: 4px solid var(--baby-blue);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
-.nav-logo {
-    text-decoration: none;
-    color: var(--pure-white);
-    font-weight: 700;
-    letter-spacing: 4px;
+.project-card:hover {
+    transform: translateY(-5px);
+    background: #23272F;
 }
 
-.nav-logo span { color: var(--baby-blue); }
-
-.cta-nav {
+.btn-primary {
     background: var(--baby-blue);
-    color: var(--deep-space) !important;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-/* Estilo Hero */
-.hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.badge {
-    border: 1px solid var(--baby-blue);
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 0.7rem;
-    margin: 5px;
-    text-transform: uppercase;
+    color: var(--space-black);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
 }
