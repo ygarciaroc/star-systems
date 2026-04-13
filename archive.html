@@ -1,90 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive | Star Electronics</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700&display=swap" rel="stylesheet">
-    <style>
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-        .service-card {
-            background: rgba(137, 207, 240, 0.05);
-            border: 1px solid rgba(229, 228, 226, 0.2);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            border-color: var(--baby-blue);
-            transform: translateY(-10px);
-            background: rgba(137, 207, 240, 0.1);
-        }
-        .service-card h2 { color: var(--baby-blue); font-weight: 700; margin-top: 0; }
-        .tech-tags { font-size: 0.7rem; color: var(--platinum); letter-spacing: 1px; }
-        .service-list { list-style: none; padding: 0; margin: 1.5rem 0; font-size: 0.9rem; }
-        .service-list li { margin-bottom: 0.5rem; opacity: 0.8; }
-        .service-list li::before { content: "→ "; color: var(--baby-blue); }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">STAR<span>ELECTRONICS</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="experience.html">Experience</a>
-                <a href="archive.html" style="color: var(--baby-blue);">Archive</a>
-                <a href="contracts.html" class="cta-nav">Get a Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <header style="text-align: center; margin-top: 4rem;">
-        <h1 style="letter-spacing: 10px; font-weight: 100;">SERVICE CATALOG</h1>
-        <p style="color: var(--baby-blue);">Engineering Solutions from Silicon to Power Systems</p>
-    </header>
-
+<main class="content-section">
+    <h2 class="section-title">Technical Archive</h2>
     <div class="archive-grid">
-        <div class="service-card">
-            <div class="tech-tags">CADENCE • MENTOR GRAPHICS • SILICON</div>
-            <h2>Microelectronics</h2>
-            <ul class="service-list">
-                <li>IC Layout & Physical Design</li>
-                <li>Cleanroom Operations Support</li>
-                <li>Silicon Validation & Testing</li>
-            </ul>
+        <div class="project-card">
+            <span class="label">Publication</span>
+            <h3>Impedance Modeling</h3>
+            <p>3D Microelectrode array-based biosensors. Published in IEEE Transducers.</p>
+            <div class="tech-stack">IEEE • Bio-Sensors • modeling</div>
+        </div>
+        
+        <div class="project-card">
+            <span class="label">Hardware</span>
+            <h3>Embedded Circuit Design</h3>
+            <p>End-to-end PCB development, BOM optimization, and procurement for low-cost manufacturing.</p>
+            <div class="tech-stack">KiCad • Procurement • Assembly</div>
         </div>
 
-        <div class="service-card">
-            <div class="tech-tags">ANSYS • SIGRITY • SI/PI</div>
-            <h2>Power Systems</h2>
-            <ul class="service-list">
-                <li>Power Integrity Analysis (PI)</li>
-                <li>Signal Integrity Analysis (SI)</li>
-                <li>High Voltage Circuit Simulation</li>
-            </ul>
-        </div>
-
-        <div class="service-card">
-            <div class="tech-tags">NEC • SCHEMATICS • EL PASO, TX</div>
-            <h2>Residential</h2>
-            <p style="font-size: 0.7rem; color: var(--baby-blue);">*In-person services restricted to El Paso, TX</p>
-            <ul class="service-list">
-                <li>Custom Electrical Schematics</li>
-                <li>Load Calculations & BOM Checking</li>
-                <li>Apprentice Technician Consultations</li>
-            </ul>
+        <div class="project-card">
+            <span class="label">Industry</span>
+            <h3>Signal & Power Integrity</h3>
+            <p>High-voltage analysis and thermal verification for silicon architecture.</p>
+            <div class="tech-stack">Ansys • Sigrity • Cadence</div>
         </div>
     </div>
-</body>
-</html>
+</main>
