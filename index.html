@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Systems | Portfolio</title>
+    <title>Star Electronics | Yamilet Rocha</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="stars-container"></div> <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">STAR<span>ELECTRONICS</span></a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="archive.html">Work</a>
+                <a href="contracts.html" class="cta-nav">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
 
     <main class="hero">
-        <div class="logo-wrapper">
-            <svg class="star-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <div class="star-logo-container">
+            <svg class="modern-star" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <linearGradient id="glisten-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#8e8e8e" />
-                        <stop offset="50%" stop-color="#ffffff" />
-                        <stop offset="100%" stop-color="#8e8e8e" />
+                    <linearGradient id="platinum-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E5E4E2;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#B4B4B4;stop-opacity:1" />
                     </linearGradient>
                 </defs>
-                <path class="star-path" d="M50 5 L60 40 L95 45 L65 55 L85 95 L50 70 L15 95 L35 55 L5 45 L40 40 Z" />
+                <path class="star-shape" d="M50 0 L61 35 L98 35 L68 57 L79 91 L50 70 L21 91 L32 57 L2 35 L39 35 Z M50 70 L85 150" />
             </svg>
-            
-            <h1 class="brand-name">STAR<span>SYSTEMS</span></h1>
-            <div class="glimmer-line"></div>
-            <p class="tagline">Ingeniería Eléctrica • Sistemas Embebidos • Diseño Técnico</p>
+            <div class="glisten-overlay"></div>
         </div>
 
-        <nav class="nav-links">
-            <a href="#proyectos">Proyectos</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+        <h1 class="glitch" data-text="YAMILET ROCHA">YAMILET ROCHA</h1>
+        <p class="subtitle">Electrical Engineer | Rising Senior @ UTEP</p>
+        <div class="badge-container">
+            <span class="badge">Microsoft Silicon Alumni</span>
+            <span class="badge">Siemens EDA Expert</span>
+        </div>
     </main>
 
     <script src="script.js"></script>
