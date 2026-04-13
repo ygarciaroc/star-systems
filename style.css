@@ -1,0 +1,98 @@
+:root {
+    --dark-bg: #0a0a0a;
+    --silver: #c0c0c0;
+    --accent: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--silver);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Para un look de landing page minimalista */
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Animación de la Estrella */
+.star-svg {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+}
+
+.star-path {
+    fill: url(#glisten-grad);
+    stroke: rgba(255,255,255,0.3);
+    stroke-width: 0.5;
+}
+
+/* Efecto Glisten (Brillo metálico) */
+#glisten-grad stop {
+    animation: move-glisten 3s infinite linear;
+}
+
+@keyframes move-glisten {
+    0% { offset: 0%; }
+    50% { offset: 50%; }
+    100% { offset: 100%; }
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: 100;
+    letter-spacing: 12px;
+    margin-top: 1rem;
+    color: var(--accent);
+}
+
+.brand-name span {
+    font-weight: 600;
+    color: var(--silver);
+}
+
+.glimmer-line {
+    width: 50px;
+    height: 1px;
+    background: white;
+    margin: 10px auto;
+    opacity: 0.5;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.nav-links {
+    margin-top: 3rem;
+}
+
+.nav-links a {
+    color: var(--silver);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+}
