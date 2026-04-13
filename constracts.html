@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contracts | Star Electronics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(137, 207, 240, 0.3);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 2px; color: var(--baby-blue); }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid var(--platinum);
+            color: white;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+        }
+        input:focus, select:focus { outline: none; border-color: var(--baby-blue); box-shadow: 0 0 10px rgba(137, 207, 240, 0.2); }
+        .submit-btn {
+            background: var(--baby-blue);
+            color: var(--deep-space);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            border-radius: 30px;
+        }
+        .submit-btn:hover { background: var(--pure-white); transform: scale(1.02); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">STAR<span>ELECTRONICS</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="archive.html">Archive</a>
+                <a href="contracts.html" class="cta-nav">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2 style="text-align: center; font-weight: 100; letter-spacing: 5px;">NEW PROJECT ORDER</h2>
+        <form action="#" id="contract-form">
+            <div class="form-group">
+                <label>FULL NAME</label>
+                <input type="text" placeholder="Yamilet Rocha" required>
+            </div>
+            <div class="form-group">
+                <label>SERVICE CATEGORY</label>
+                <select required>
+                    <option value="">Select a Sector</option>
+                    <option value="micro">Microelectronics / Silicon</option>
+                    <option value="power">Power Systems (High Voltage)</option>
+                    <option value="res">Residential (El Paso Only)</option>
+                    <option value="cad">Circuit / BOM Design</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>PROJECT DESCRIPTION</label>
+                <textarea rows="4" placeholder="Describe requirements, measurements, or tools (e.g. KiCad, Cadence)..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Initialize Request</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contract-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Signal received. Star Electronics will contact you shortly.');
+        });
+    </script>
+</body>
+</html>
